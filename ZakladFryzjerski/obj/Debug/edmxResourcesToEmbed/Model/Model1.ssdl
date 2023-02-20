@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZakladFryzjerskiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Fryzjer">
+    <Key>
+      <PropertyRef Name="FryzjerID" />
+    </Key>
+    <Property Name="FryzjerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Imie" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DataUrodzenia" Type="date" Nullable="false" />
+    <Property Name="StazPracy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Klient">
+    <Key>
+      <PropertyRef Name="KlientID" />
+    </Key>
+    <Property Name="KlientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Imie" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NumerTelefonu" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usługa">
+    <Key>
+      <PropertyRef Name="UsługaID" />
+    </Key>
+    <Property Name="UsługaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cena" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Wizyta">
+    <Key>
+      <PropertyRef Name="WizytaID" />
+    </Key>
+    <Property Name="WizytaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KlientID" Type="int" />
+    <Property Name="FryzjerID" Type="int" />
+    <Property Name="DataCzas" Type="datetime" Nullable="false" />
+    <Property Name="Uwagi" Type="nvarchar" MaxLength="200" />
+    <Property Name="UsługaID" Type="int" />
+  </EntityType>
+  <Association Name="FK__Wizyta__FryzjerI__3E52440B">
+    <End Role="Fryzjer" Type="Self.Fryzjer" Multiplicity="0..1" />
+    <End Role="Wizyta" Type="Self.Wizyta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fryzjer">
+        <PropertyRef Name="FryzjerID" />
+      </Principal>
+      <Dependent Role="Wizyta">
+        <PropertyRef Name="FryzjerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Wizyta__KlientID__3D5E1FD2">
+    <End Role="Klient" Type="Self.Klient" Multiplicity="0..1" />
+    <End Role="Wizyta" Type="Self.Wizyta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klient">
+        <PropertyRef Name="KlientID" />
+      </Principal>
+      <Dependent Role="Wizyta">
+        <PropertyRef Name="KlientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Wizyta__UsługaID__3F466844">
+    <End Role="Usługa" Type="Self.Usługa" Multiplicity="0..1" />
+    <End Role="Wizyta" Type="Self.Wizyta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usługa">
+        <PropertyRef Name="UsługaID" />
+      </Principal>
+      <Dependent Role="Wizyta">
+        <PropertyRef Name="UsługaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ZakladFryzjerskiModelStoreContainer">
+    <EntitySet Name="Fryzjer" EntityType="Self.Fryzjer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Klient" EntityType="Self.Klient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usługa" EntityType="Self.Usługa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Wizyta" EntityType="Self.Wizyta" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Wizyta__FryzjerI__3E52440B" Association="Self.FK__Wizyta__FryzjerI__3E52440B">
+      <End Role="Fryzjer" EntitySet="Fryzjer" />
+      <End Role="Wizyta" EntitySet="Wizyta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Wizyta__KlientID__3D5E1FD2" Association="Self.FK__Wizyta__KlientID__3D5E1FD2">
+      <End Role="Klient" EntitySet="Klient" />
+      <End Role="Wizyta" EntitySet="Wizyta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Wizyta__UsługaID__3F466844" Association="Self.FK__Wizyta__UsługaID__3F466844">
+      <End Role="Usługa" EntitySet="Usługa" />
+      <End Role="Wizyta" EntitySet="Wizyta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

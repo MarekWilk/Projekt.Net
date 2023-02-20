@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ZakladFryzjerskiModelStoreContainer" CdmEntityContainer="ZakladFryzjerskiEntities">
+    <EntitySetMapping Name="Fryzjers">
+      <EntityTypeMapping TypeName="ZakladFryzjerskiModel.Fryzjer">
+        <MappingFragment StoreEntitySet="Fryzjer">
+          <ScalarProperty Name="FryzjerID" ColumnName="FryzjerID" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="DataUrodzenia" ColumnName="DataUrodzenia" />
+          <ScalarProperty Name="StazPracy" ColumnName="StazPracy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Klients">
+      <EntityTypeMapping TypeName="ZakladFryzjerskiModel.Klient">
+        <MappingFragment StoreEntitySet="Klient">
+          <ScalarProperty Name="KlientID" ColumnName="KlientID" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NumerTelefonu" ColumnName="NumerTelefonu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usługa">
+      <EntityTypeMapping TypeName="ZakladFryzjerskiModel.Usługa">
+        <MappingFragment StoreEntitySet="Usługa">
+          <ScalarProperty Name="UsługaID" ColumnName="UsługaID" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Cena" ColumnName="Cena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wizytas">
+      <EntityTypeMapping TypeName="ZakladFryzjerskiModel.Wizyta">
+        <MappingFragment StoreEntitySet="Wizyta">
+          <ScalarProperty Name="WizytaID" ColumnName="WizytaID" />
+          <ScalarProperty Name="KlientID" ColumnName="KlientID" />
+          <ScalarProperty Name="FryzjerID" ColumnName="FryzjerID" />
+          <ScalarProperty Name="DataCzas" ColumnName="DataCzas" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+          <ScalarProperty Name="UsługaID" ColumnName="UsługaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

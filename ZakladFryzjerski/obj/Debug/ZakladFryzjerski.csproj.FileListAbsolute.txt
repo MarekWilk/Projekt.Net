@@ -1,0 +1,12 @@
+C:\Users\MarekWilk\source\repos\projekt\ZakladFryzjerski\bin\Debug\ZakladFryzjerski.dll.config
+C:\Users\MarekWilk\source\repos\projekt\ZakladFryzjerski\bin\Debug\ZakladFryzjerski.dll
+C:\Users\MarekWilk\source\repos\projekt\ZakladFryzjerski\bin\Debug\ZakladFryzjerski.pdb
+C:\Users\MarekWilk\source\repos\projekt\ZakladFryzjerski\bin\Debug\EntityFramework.dll
+C:\Users\MarekWilk\source\repos\projekt\ZakladFryzjerski\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MarekWilk\source\repos\projekt\ZakladFryzjerski\bin\Debug\EntityFramework.xml
+C:\Users\MarekWilk\source\repos\projekt\ZakladFryzjerski\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MarekWilk\source\repos\projekt\ZakladFryzjerski\obj\Debug\ZakladFryzjerski.csproj.AssemblyReference.cache
+C:\Users\MarekWilk\source\repos\projekt\ZakladFryzjerski\obj\Debug\ZakladFryzjerski.csproj.CoreCompileInputs.cache
+C:\Users\MarekWilk\source\repos\projekt\ZakladFryzjerski\obj\Debug\ZakladFryzjerski.csproj.CopyComplete
+C:\Users\MarekWilk\source\repos\projekt\ZakladFryzjerski\obj\Debug\ZakladFryzjerski.dll
+C:\Users\MarekWilk\source\repos\projekt\ZakladFryzjerski\obj\Debug\ZakladFryzjerski.pdb
